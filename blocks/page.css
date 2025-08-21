@@ -1,4 +1,17 @@
 .page {
   background-color: #fcf5e5;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "header hearder header"
+    "cards cards cards"
+    "cards cards cards"
+    "footer footer footer";
+}
+
+@media screen and (max-width: 1320px) {
+}
+
+@media screen and (max-width: 630px) {
 }
