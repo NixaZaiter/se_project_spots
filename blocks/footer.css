@@ -1,5 +1,6 @@
 .footer {
-  display: flex;
+  place-self: center;
+  grid-column: 1 / 4;
 }
 
 .footer__copyright {

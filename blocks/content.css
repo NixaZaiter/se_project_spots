@@ -1,0 +1,14 @@
+.content {
+  display: grid;
+  grid-column: 2 / 3;
+  grid-template-rows: max(274px) 1fr;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (max-width: 630px) {
+  .content {
+    grid-template-columns: repeat(3, 1f);
+    grid-template-rows: auto;
+    grid-auto-flow: column;
+  }
+}

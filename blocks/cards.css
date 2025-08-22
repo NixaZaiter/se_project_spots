@@ -1,10 +1,9 @@
 .cards {
-  max-width: 1280px;
-  max-height: 970px;
   margin: 0 auto;
-  gap: 20px;
+
   padding-bottom: 40px;
   border-bottom: 1px solid;
+  grid-column: 2;
 }
 
 .cards__list {
@@ -12,17 +11,11 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  grid-template-columns: repeat(3, 413px);
-  grid-template-rows: repeat(2, 445px);
-  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   row-gap: 40px;
   column-gap: 20px;
-}
-
-@media screen and (max-width: 1320px) {
-  .cards__list {
-    grid-template-columns: repeat(2, 413px);
-  }
+  grid-area: 2 2;
 }
 
 .card__icon {
@@ -30,19 +23,20 @@
   height: 20px;
   opacity: 0.4;
 }
+
 .card__icon:hover {
   opacity: 1;
 }
 
 .card {
-  max-width: 100%;
+  max-width: 413px;
 }
 
 .card__info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  max-width: 100%;
+  text-align: center;
+
   margin: 12px 0 0;
 }
 
@@ -55,7 +49,23 @@
 }
 
 .card__image {
-  width: 100%;
-  height: 413px;
+  width: 413px;
+  aspect-ratio: 1;
   border-radius: 8px;
+}
+
+@media screen and (max-width: 1320px) {
+  .cards__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .cards__list {
+    grid-template-columns: 1fr;
+  }
+
+  .card__image {
+    width: 100%;
+  }
 }

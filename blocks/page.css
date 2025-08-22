@@ -1,17 +1,16 @@
 .page {
   background-color: #fcf5e5;
+  width: 100%;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-areas:
-    "header hearder header"
-    "cards cards cards"
-    "cards cards cards"
-    "footer footer footer";
+  display: grid;
+  grid-template-rows: 46px 1fr 136px;
+  grid-template-columns: 80px 1fr 80px;
+  justify-items: center;
 }
 
 @media screen and (max-width: 1320px) {
-}
-
-@media screen and (max-width: 630px) {
+  .page {
+    grid-template-columns: 16px 1fr 16px;
+    justify-items: center;
+  }
 }
