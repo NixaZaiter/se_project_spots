@@ -4,13 +4,5 @@
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   display: grid;
   grid-template-rows: 46px 1fr 136px;
-  grid-template-columns: 80px 1fr 80px;
-  justify-items: center;
-}
-
-@media screen and (max-width: 1320px) {
-  .page {
-    grid-template-columns: 16px 1fr 16px;
-    justify-items: center;
-  }
+  grid-template-columns: 16px 1fr 16px;
 }

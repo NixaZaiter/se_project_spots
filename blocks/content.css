@@ -1,14 +1,15 @@
 .content {
   display: grid;
-  grid-column: 2 / 3;
-  grid-template-rows: max(274px) 1fr;
+  grid-column: 2;
+  grid-template-rows:
+    max-content
+    min-content;
   grid-template-columns: 1fr;
+  justify-self: center;
 }
 
 @media screen and (max-width: 630px) {
   .content {
-    grid-template-columns: repeat(3, 1f);
-    grid-template-rows: auto;
-    grid-auto-flow: column;
+    grid-template-rows: min-content;
   }
 }
