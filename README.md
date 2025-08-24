@@ -1,21 +1,24 @@
 # Project 3: Spots
 
-### Overview  
+### Overview
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+- Description & Fundamentals
+- Technology & Techniques
+- GitHub Pages
+- Updates
+
+**Description & Fundamentals**
+
+My submission for the second stage of the Spots project for sprint 3. The page should function as expected and be reactive to different screen sizes.
+
+**Technology & Techniques**
+
+Most of the page consists of various grids with most elements having flexable values. Aspect ratio was used instead of the bottom padding trick for the images due to it's simplicity. One instance of flex was used for the header just to push the logo into position.
+
+**GitHub Pages**
+
+https://nixazaiter.github.io/se_project_spots/
+
+**Updates**
+
+Planning to send the required video for the project as soon as the code itself has been reviewed and, if needed, fixed up.
