@@ -5,7 +5,7 @@
 - Description & Fundamentals
 - Technology & Techniques
 - GitHub Pages
-- Updates
+- Video link
 
 **Description & Fundamentals**
 
@@ -19,6 +19,6 @@ Most of the page consists of various grids with most elements having flexable va
 
 https://nixazaiter.github.io/se_project_spots/
 
-**Updates**
+**Video link**
 
-Planning to send the required video for the project as soon as the code itself has been reviewed and, if needed, fixed up.
+https://www.loom.com/share/f54f9c780fac4cfda5bc3b68ab57089e?sid=dd8dd13e-b203-4423-858f-a599f69ac245
