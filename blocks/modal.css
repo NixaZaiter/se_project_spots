@@ -62,13 +62,6 @@
   margin: 0 50px 32px;
 }
 
-.modal__input {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  max-height: 78px;
-}
-
 @media screen and (max-width: 630px) {
   .modal__container {
     max-width: 300px;
@@ -86,9 +79,5 @@
 
   .modal__header {
     font-size: 20px;
-  }
-
-  .modal__input {
-    max-height: 74px;
   }
 }

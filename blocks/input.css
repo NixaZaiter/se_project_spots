@@ -1,4 +1,11 @@
 .input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 78px;
+}
+
+.input__text {
   border: 1px #21212166 solid;
   border-radius: 8px;
   font-weight: 500;
@@ -13,7 +20,7 @@
   color: #2121214d;
 }
 
-.input:hover {
+.input__text:hover {
   border: 1px #212121 solid;
 }
 
@@ -42,6 +49,10 @@
 
 @media screen and (max-width: 630px) {
   .input {
+    max-height: 74px;
+  }
+
+  .input__text {
     max-height: 48px;
     font-size: 16px;
   }
