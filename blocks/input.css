@@ -1,0 +1,52 @@
+.input {
+  border: 1px #21212166 solid;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+  transition: 0.3s;
+  padding: 16px 12px;
+  max-height: 52px;
+}
+
+.input::placeholder {
+  color: #2121214d;
+}
+
+.input:hover {
+  border: 1px #212121 solid;
+}
+
+.input__label {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #212121b2;
+}
+
+.input__button {
+  background-color: #212121;
+  color: #fcf5e5;
+  max-width: 156px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 18px 32px;
+  font-size: 16px;
+}
+
+.input__button:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 630px) {
+  .input {
+    max-height: 48px;
+    font-size: 16px;
+  }
+
+  .input__button {
+    min-width: 100%;
+  }
+}

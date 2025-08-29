@@ -132,6 +132,71 @@
       <footer class="footer">
         <p class="footer__copyright">2025 © Spots</p>
       </footer>
+      <!-- Edit profile modal -->
+      <div class="modal modal_is-open">
+      <div class="modal__container">
+        <div class="modal__row">
+          <h3 class="modal__header">Edit profile</h3>
+          <button class="modal__close">
+            <img src="./images/close-icon.svg" alt="close icon" />
+          </button>
+        </div>
+        <form class="modal__content">
+          <div class="modal__input">
+            <label class="input__label" for="input-name">Name</label>
+            <input
+              type="text"
+              id="input-name"
+              class="input"
+              placeholder="Type your name"
+            />
+          </div>
+          <div class="modal__input">
+            <label class="input__label" for="input-description"
+              >Description</label
+            >
+            <input
+              type="text"
+              id="input-description"
+              class="input"
+              placeholder="Describe yourself"
+            />
+          </div>
+          <button type="submit" class="input input__button">Save</button>
+        </form>
+      </div>
+      <!-- New post modal -->
+      <div class="modal modal_is-open">
+        <div class="modal__container">
+          <div class="modal__row">
+            <h3 class="modal__header">New post</h3>
+            <button class="modal__close">
+              <img src="./images/close-icon.svg" alt="close icon" />
+            </button>
+          </div>
+          <form class="modal__content">
+            <div class="modal__input">
+              <label class="input__label" for="input-img">Image link</label>
+              <input
+                type="text"
+                id="input-img"
+                class="input"
+                placeholder="Paste a link to the picture"
+              />
+            </div>
+            <div class="modal__input">
+              <label class="input__label" for="input-caption">Caption</label>
+              <input
+                type="text"
+                id="input-caption"
+                class="input"
+                placeholder="Type your caption"
+              />
+            </div>
+            <button type="submit" class="input input__button">Save</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
