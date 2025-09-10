@@ -1,16 +1,20 @@
 .modal {
-  visibility: hidden;
   background-color: #21212166;
   min-height: 100%;
   min-width: 100%;
   position: fixed;
   display: flex;
+  visibility: hidden;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transition: 0.4s;
 }
 
 .modal_is-open {
   visibility: visible;
+  opacity: 1;
+  transition: 0.4s;
 }
 
 .modal__container {
