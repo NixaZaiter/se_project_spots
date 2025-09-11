@@ -1,7 +1,5 @@
 .modal {
   background-color: #21212166;
-  min-height: 100%;
-  min-width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -13,6 +11,7 @@
   justify-content: center;
   opacity: 0;
   transition: visibility 0.4s ease, opacity 0.4s;
+  padding: 0 10px;
 }
 
 .modal_is-open {
@@ -30,7 +29,6 @@
   max-width: 730px;
   max-height: 408px;
   flex-grow: 1;
-  margin: 0 20px;
 }
 
 .modal__row {
@@ -71,11 +69,6 @@
 }
 
 @media screen and (max-width: 630px) {
-  .modal__container {
-    max-width: 300px;
-    min-height: 336px;
-  }
-
   .modal__row {
     margin: 12px 12px 24px;
   }

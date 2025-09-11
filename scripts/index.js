@@ -21,26 +21,30 @@ const inputCaption = newPostModal.querySelector("#input-caption");
 
 // Modal Open/Close Listeners + Current Profile Inputs
 editProfileBtn.addEventListener("click", function (evt) {
-  toggleModal(editProfileModal);
+  openModal(editProfileModal);
   inputName.value = editProfileName.textContent;
   inputDescription.value = editProfileDescription.textContent;
 });
 
 editProfileClose.addEventListener("click", function (evt) {
-  toggleModal(editProfileModal);
+  closeModal(editProfileModal);
 });
 
 newPostBtn.addEventListener("click", function (evt) {
-  toggleModal(newPostModal);
+  openModal(newPostModal);
 });
 
 newPostClose.addEventListener("click", function (evt) {
-  toggleModal(newPostModal);
+  closeModal(newPostModal);
 });
 
 // Functions and Submits
-function toggleModal(modal) {
-  modal.classList.toggle("modal_is-open");
+function openModal(modal) {
+  modal.classList.add("modal_is-open");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-open");
 }
 
 function handleProfileFormSubmit(event) {
