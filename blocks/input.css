@@ -14,6 +14,7 @@
   transition: 0.3s;
   padding: 16px 12px;
   max-height: 52px;
+  box-sizing: border-box;
 }
 
 .input::placeholder {
@@ -41,10 +42,12 @@
   transition: 0.3s;
   padding: 18px 32px;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
 .input__button:hover {
   opacity: 0.8;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 630px) {
