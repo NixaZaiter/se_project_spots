@@ -58,7 +58,7 @@ function handleProfileFormSubmit(event) {
   editProfileName.textContent = inputValues.name;
   editProfileDescription.textContent = inputValues.description;
 
-  editProfileModal.classList.remove("modal_is-open");
+  closeModal(editProfileModal);
 }
 
 editProfileForm.addEventListener("submit", handleProfileFormSubmit);
@@ -69,7 +69,7 @@ function handleAddCardSubmit(event) {
   console.log(inputImg.value);
   console.log(inputCaption.value);
 
-  newPostModal.classList.remove("modal_is-open");
+  closeModal(newPostModal);
 }
 
 newPostForm.addEventListener("submit", handleAddCardSubmit);
