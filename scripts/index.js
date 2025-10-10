@@ -24,6 +24,7 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
+
 // General Modal Setup and Buttons
 const editProfileBtn = document.querySelector(".profile__button_type_edit");
 const editProfileModal = document.querySelector("#edit-profile-modal");
@@ -44,6 +45,21 @@ const inputDescription = editProfileModal.querySelector("#input-description");
 const newPostForm = newPostModal.querySelector(".modal__content");
 const inputImg = newPostModal.querySelector("#input-img");
 const inputCaption = newPostModal.querySelector("#input-caption");
+
+// Card Template
+const cardTemplate = document.querySelector("#new-cards").content;
+const cardsList = document.querySelector(".cards__list");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardTitleElement = cardElement.querySelector(".card__text");
+  const cardImageElement = cardElement.querySelector(".card__image");
+
+  cardTitleElement.textContent = data.name;
+  (cardImageElement.alt = data.name), (cardImageElement.src = data.link);
+
+  return cardElement;
+}
 
 // Modal Open/Close Listeners + Current Profile Inputs
 editProfileBtn.addEventListener("click", function (evt) {
@@ -101,6 +117,6 @@ function handleAddCardSubmit(event) {
 newPostForm.addEventListener("submit", handleAddCardSubmit);
 
 initialCards.forEach(function (item) {
-  console.log(item.name);
-  console.log(item.link);
+  const cardElement = getCardElement(item);
+  cardsList.append(cardElement);
 });
