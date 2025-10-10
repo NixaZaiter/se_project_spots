@@ -109,8 +109,13 @@ editProfileForm.addEventListener("submit", handleProfileFormSubmit);
 function handleAddCardSubmit(event) {
   event.preventDefault();
 
-  console.log(inputImg.value);
-  console.log(inputCaption.value);
+  const inputValues = {
+    name: inputCaption.value,
+    link: inputImg.value,
+  };
+
+  const cardElement = getCardElement(inputValues);
+  cardsList.prepend(cardElement);
 
   closeModal(newPostModal);
 }
