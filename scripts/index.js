@@ -47,17 +47,30 @@ const inputImg = newPostModal.querySelector("#input-img");
 const inputCaption = newPostModal.querySelector("#input-caption");
 
 // Card Template
-const cardTemplate = document.querySelector("#new-cards").content;
+const cardTemplate = document
+  .querySelector("#new-cards")
+  .content.querySelector(".card");
 const cardsList = document.querySelector(".cards__list");
 
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
-  const cardTitleElement = cardElement.querySelector(".card__text");
-  const cardImageElement = cardElement.querySelector(".card__image");
 
+  const cardTitleElement = cardElement.querySelector(".card__text");
   cardTitleElement.textContent = data.name;
+
+  const cardImageElement = cardElement.querySelector(".card__image");
   cardImageElement.alt = data.name;
   cardImageElement.src = data.link;
+
+  const likeButton = cardElement.querySelector(".card__icon_type_like");
+  likeButton.addEventListener("click", function (evt) {
+    evt.target.classList.toggle("card__icon_active");
+  });
+
+  const deleteButton = cardElement.querySelector(".card__icon_type_trash");
+  deleteButton.addEventListener("click", function () {
+    cardElement.remove();
+  });
 
   return cardElement;
 }
