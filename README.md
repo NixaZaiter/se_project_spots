@@ -1,24 +1,28 @@
-# Project 3: Spots (Stage 5)
+# Project "Spots": (Stage 8)
 
-### Overview
+## Overview
 
 - Description & Fundamentals
 - Technology & Techniques
 - GitHub Pages
 - Notes
 
-**Description & Fundamentals**
+### **Description & Fundamentals**
 
-My submission for the fifth stage of the Spots project for sprint 4. The modals should be able to be filled out and smoothly transition between open and closed.
+My submission for the eighth stage of the "Spots" project for Sprint 5. Dynamic cards can be generated now with the "New Post" button. The like button now toggles on and off when clicked. A card delete button has been added with included functionality. Finally, the cards can be opened in a modal of their own to view their full size.
 
-**Technology & Techniques**
+### **Technology & Techniques**
 
-Modal button and pop-up variables are kept near the top as a general grouping while the variables for input control are just below and seperated by which modal they go to. I've also decided to include some comment text in both the HTML and JS, just to help divide up some of the segments a bit better.
+The HTML/CSS have been refactored a bit to further diversify the card icon classes into seperate like and delete classes. The "getCardElement" function to add, delete, and import data to new cards has been implemented into the JS code. Buttons and modals for the cards to be previewed have also been coded into the JS/HTML and styled in the CSS.
 
-**GitHub Pages**
+### **GitHub Pages**
 
 https://nixazaiter.github.io/se_project_spots/
 
-**Notes**
+### **Notes**
 
-Struggled a bit with getting the inputs to update, but when asking Dot, it became quite obvious where I made a mistake. The rest was fairly straight forward.
+Struggles: Honestly had more issues with the CSS styling than the JS. Whether it was removing the border of the inactive like button from the active state or just getting the like button to not be cut off by the button borders.
+
+Possible features:
+
+- Would like to add in options to close modals by clicking outside of them (possibly mobile only).
