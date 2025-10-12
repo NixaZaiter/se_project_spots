@@ -58,6 +58,10 @@ const cardTemplate = document
   .content.querySelector(".card");
 const cardsList = document.querySelector(".cards__list");
 
+prevImgCloseBtn.addEventListener("click", function (evt) {
+  closeModal(prevImgModal);
+});
+
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
 
@@ -83,10 +87,6 @@ function getCardElement(data) {
     prevImgImage.alt = cardImageElement.alt;
     prevImgText.textContent = cardTitleElement.textContent;
     openModal(prevImgModal);
-  });
-
-  prevImgCloseBtn.addEventListener("click", function (evt) {
-    closeModal(prevImgModal);
   });
 
   return cardElement;
@@ -146,6 +146,8 @@ function handleAddCardSubmit(event) {
 
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
+
+  newPostForm.reset();
 
   closeModal(newPostModal);
 }

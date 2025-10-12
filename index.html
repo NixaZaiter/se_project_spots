@@ -44,7 +44,7 @@
             <!-- Dynamic Card Template -->
             <template id="new-cards">
               <li class="card">
-                <img class="card__image" src="" alt="" />
+                <img class="card__image" src="#" alt="" />
                 <h2 class="card__text"></h2>
                 <button
                   aria-label="Like card"
@@ -80,6 +80,7 @@
               <label class="input__label" for="input-name">Name</label>
               <input
                 type="text"
+                required
                 id="input-name"
                 class="input__text"
                 placeholder="Type your name"
@@ -92,6 +93,7 @@
               >
               <input
                 type="text"
+                required
                 id="input-description"
                 class="input__text"
                 placeholder="Describe yourself"
@@ -120,6 +122,7 @@
               <label class="input__label" for="input-img">Image link</label>
               <input
                 type="text"
+                required
                 id="input-img"
                 class="input__text"
                 placeholder="Paste a link to the picture"
@@ -130,6 +133,7 @@
               <label class="input__label" for="input-caption">Caption</label>
               <input
                 type="text"
+                required
                 id="input-caption"
                 class="input__text"
                 placeholder="Type your caption"
@@ -152,7 +156,7 @@
           >
             <img src="./images/close-icon-white.svg" alt="close icon" />
           </button>
-          <img class="modal__image" src="" alt="" />
+          <img class="modal__image" src="#" alt="" />
 
           <p class="modal__title modal__title_type_preview-image"></p>
         </div>

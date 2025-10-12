@@ -17,7 +17,7 @@
   box-sizing: border-box;
 }
 
-.input::placeholder {
+.input__text::placeholder {
   color: #2121214d;
 }
 

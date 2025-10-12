@@ -12,6 +12,7 @@
   grid-column: 1 / 3;
   grid-row: 1;
   margin-bottom: 12px;
+  cursor: pointer;
 }
 
 .card__text {
@@ -75,6 +76,7 @@
 .card__delete-btn:hover {
   background-image: url(../images/trash-icon-hover.svg);
   opacity: 1;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 895px) {
