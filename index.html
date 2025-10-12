@@ -41,91 +41,23 @@
         </section>
         <section class="cards">
           <ul class="cards__list">
-            <!-- card 1 -->
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Val Thorens"
-              />
-
-              <h2 class="card__text">Val Thorens</h2>
-              <img
-                class="card__icon"
-                src="./images/like-icon.svg"
-                alt="Like icon"
-              />
-            </li>
-            <!-- card 2 -->
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/2-photo-by-ceiline-from-pexels.jpg"
-                alt="Restaurant terrace"
-              />
-              <h2 class="card__text">Restaurant terrace</h2>
-              <img
-                class="card__icon"
-                src="./images/like-icon.svg"
-                alt="Like icon"
-              />
-            </li>
-            <!-- card 3 -->
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-                alt="An outdoor terrace"
-              />
-              <h2 class="card__text">An outdoor cafe</h2>
-              <img
-                class="card__icon"
-                src="./images/like-icon.svg"
-                alt="Like icon"
-              />
-            </li>
-            <!-- card 4 -->
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-                alt="A very long bridge, over the forest"
-              />
-              <h2 class="card__text">A very long bridge, over the forest...</h2>
-              <img
-                class="card__icon"
-                src="./images/like-icon.svg"
-                alt="Like icon"
-              />
-            </li>
-            <!-- card 5 -->
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-                alt="Tunnel with morning light"
-              />
-              <h2 class="card__text">Tunnel with morning light</h2>
-              <img
-                class="card__icon"
-                src="./images/like-icon.svg"
-                alt="Like icon"
-              />
-            </li>
-            <!-- card 6 -->
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Mountain house"
-              />
-              <h2 class="card__text">Mountain house</h2>
-              <img
-                class="card__icon"
-                src="./images/like-icon.svg"
-                alt="Like icon"
-              />
-            </li>
+            <!-- Dynamic Card Template -->
+            <template id="new-cards">
+              <li class="card">
+                <img class="card__image" src="" alt="" />
+                <h2 class="card__text"></h2>
+                <button
+                  aria-label="Like card"
+                  class="card__like-btn"
+                  type="button"
+                ></button>
+                <button
+                  aria-label="Delete card"
+                  class="card__delete-btn"
+                  type="button"
+                ></button>
+              </li>
+            </template>
           </ul>
         </section>
       </main>
@@ -208,6 +140,21 @@
               <button type="submit" class="input__button">Save</button>
             </div>
           </form>
+        </div>
+      </div>
+
+      <!-- Image Preview Modal -->
+      <div class="modal" id="image-preview-modal">
+        <div class="modal__image-container">
+          <button
+            type="button"
+            class="modal__close modal__close_type_preview-image"
+          >
+            <img src="./images/close-icon-white.svg" alt="close icon" />
+          </button>
+          <img class="modal__image" src="" alt="" />
+
+          <p class="modal__title modal__title_type_preview-image"></p>
         </div>
       </div>
     </div>

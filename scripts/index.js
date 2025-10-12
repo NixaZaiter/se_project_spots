@@ -24,6 +24,7 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
+
 // General Modal Setup and Buttons
 const editProfileBtn = document.querySelector(".profile__button_type_edit");
 const editProfileModal = document.querySelector("#edit-profile-modal");
@@ -31,9 +32,15 @@ const editProfileClose = editProfileModal.querySelector(".modal__close");
 const profile = document.querySelector(".profile");
 const editProfileName = profile.querySelector(".profile__name");
 const editProfileDescription = profile.querySelector(".profile__description");
+
 const newPostBtn = document.querySelector(".profile__button_type_post");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostClose = newPostModal.querySelector(".modal__close");
+
+const prevImgModal = document.querySelector("#image-preview-modal");
+const prevImgText = prevImgModal.querySelector(".modal__title");
+const prevImgImage = prevImgModal.querySelector(".modal__image");
+const prevImgCloseBtn = prevImgModal.querySelector(".modal__close");
 
 // Profile Modal Inputs
 const editProfileForm = editProfileModal.querySelector(".modal__content");
@@ -44,6 +51,46 @@ const inputDescription = editProfileModal.querySelector("#input-description");
 const newPostForm = newPostModal.querySelector(".modal__content");
 const inputImg = newPostModal.querySelector("#input-img");
 const inputCaption = newPostModal.querySelector("#input-caption");
+
+// Card Template
+const cardTemplate = document
+  .querySelector("#new-cards")
+  .content.querySelector(".card");
+const cardsList = document.querySelector(".cards__list");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+
+  const cardTitleElement = cardElement.querySelector(".card__text");
+  cardTitleElement.textContent = data.name;
+
+  const cardImageElement = cardElement.querySelector(".card__image");
+  cardImageElement.alt = data.name;
+  cardImageElement.src = data.link;
+
+  const likeButton = cardElement.querySelector(".card__like-btn");
+  likeButton.addEventListener("click", function (evt) {
+    evt.target.classList.toggle("card__like-btn_active");
+  });
+
+  const deleteButton = cardElement.querySelector(".card__delete-btn");
+  deleteButton.addEventListener("click", function () {
+    cardElement.remove();
+  });
+
+  cardImageElement.addEventListener("click", function () {
+    prevImgImage.src = cardImageElement.src;
+    prevImgImage.alt = cardImageElement.alt;
+    prevImgText.textContent = cardTitleElement.textContent;
+    openModal(prevImgModal);
+  });
+
+  prevImgCloseBtn.addEventListener("click", function (evt) {
+    closeModal(prevImgModal);
+  });
+
+  return cardElement;
+}
 
 // Modal Open/Close Listeners + Current Profile Inputs
 editProfileBtn.addEventListener("click", function (evt) {
@@ -92,8 +139,13 @@ editProfileForm.addEventListener("submit", handleProfileFormSubmit);
 function handleAddCardSubmit(event) {
   event.preventDefault();
 
-  console.log(inputImg.value);
-  console.log(inputCaption.value);
+  const inputValues = {
+    name: inputCaption.value,
+    link: inputImg.value,
+  };
+
+  const cardElement = getCardElement(inputValues);
+  cardsList.prepend(cardElement);
 
   closeModal(newPostModal);
 }
@@ -101,6 +153,6 @@ function handleAddCardSubmit(event) {
 newPostForm.addEventListener("submit", handleAddCardSubmit);
 
 initialCards.forEach(function (item) {
-  console.log(item.name);
-  console.log(item.link);
+  const cardElement = getCardElement(item);
+  cardsList.append(cardElement);
 });
