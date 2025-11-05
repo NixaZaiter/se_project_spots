@@ -37,10 +37,10 @@ const newPostBtn = document.querySelector(".profile__button_type_post");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostClose = newPostModal.querySelector(".modal__close");
 
-const prevImgModal = document.querySelector("#image-preview-modal");
-const prevImgText = prevImgModal.querySelector(".modal__title");
-const prevImgImage = prevImgModal.querySelector(".modal__image");
-const prevImgCloseBtn = prevImgModal.querySelector(".modal__close");
+const previewImgModal = document.querySelector("#image-preview-modal");
+const previewImgText = previewImgModal.querySelector(".modal__title");
+const previewImgImage = previewImgModal.querySelector(".modal__image");
+const previewImgCloseBtn = previewImgModal.querySelector(".modal__close");
 
 // Profile Modal Inputs
 const editProfileForm = editProfileModal.querySelector(".modal__content");
@@ -58,8 +58,8 @@ const cardTemplate = document
   .content.querySelector(".card");
 const cardsList = document.querySelector(".cards__list");
 
-prevImgCloseBtn.addEventListener("click", function (evt) {
-  closeModal(prevImgModal);
+previewImgCloseBtn.addEventListener("click", function (evt) {
+  closeModal(previewImgModal);
 });
 
 function getCardElement(data) {
@@ -83,10 +83,10 @@ function getCardElement(data) {
   });
 
   cardImageElement.addEventListener("click", function () {
-    prevImgImage.src = cardImageElement.src;
-    prevImgImage.alt = cardImageElement.alt;
-    prevImgText.textContent = cardTitleElement.textContent;
-    openModal(prevImgModal);
+    previewImgImage.src = cardImageElement.src;
+    previewImgImage.alt = cardImageElement.alt;
+    previewImgText.textContent = cardTitleElement.textContent;
+    openModal(previewImgModal);
   });
 
   return cardElement;

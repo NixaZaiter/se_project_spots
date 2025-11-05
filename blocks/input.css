@@ -1,11 +1,10 @@
 .input {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  max-height: 78px;
 }
 
 .input__text {
+  width: 100%;
   border: 1px #21212166 solid;
   border-radius: 8px;
   font-weight: 500;
@@ -15,6 +14,7 @@
   padding: 16px 12px;
   max-height: 52px;
   box-sizing: border-box;
+  margin-top: 8px;
 }
 
 .input__text::placeholder {
@@ -25,11 +25,32 @@
   border: 1px #212121 solid;
 }
 
+.input__text_type_error {
+  border-color: #ff000099;
+}
+
+.input__error {
+  visibility: hidden;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.input__error_visible {
+  visibility: visible;
+  color: #ff0000b2;
+  margin-top: 8px;
+}
+
 .input__label {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.1;
   color: #212121b2;
+  display: block;
+  margin-bottom: 32px;
 }
 
 .input__button {
@@ -43,6 +64,7 @@
   padding: 18px 32px;
   font-size: 16px;
   box-sizing: border-box;
+  line-height: 1;
 }
 
 .input__button:hover {
@@ -50,9 +72,13 @@
   cursor: pointer;
 }
 
+.input__button_disabled {
+  background: #212121;
+}
+
 @media screen and (max-width: 630px) {
-  .input {
-    max-height: 74px;
+  .input__label {
+    margin-bottom: 24px;
   }
 
   .input__text {
