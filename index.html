@@ -74,42 +74,46 @@
             </button>
           </div>
           <!-- Edit Profile Form -->
-          <form class="modal__content">
+          <form class="modal__form" novalidate>
             <!-- Name Input -->
-            <div class="input">
-              <label class="input__label" for="input-name"
+            <div class="modal__input">
+              <label class="modal__label" for="input-name"
                 >Name
                 <input
                   type="text"
                   required
                   id="input-name"
-                  class="input__text input__text_type_error"
+                  class="modal__input_type_text"
                   placeholder="Type your name"
                   minlength="2"
                   maxlength="40"
                 />
-                <span class="input__error input__error_visible"></span>
+                <span id="input-name-error" class="modal__error"></span>
               </label>
             </div>
             <!-- Description Input -->
-            <div class="input">
-              <label class="input__label" for="input-description"
+            <div class="modal__input">
+              <label class="modal__label" for="input-description"
                 >Description
                 <input
                   type="text"
                   required
                   id="input-description"
-                  class="input__text input__text_type_error"
+                  class="modal__input_type_text"
                   placeholder="Describe yourself"
                   minlength="2"
                   maxlength="200"
                 />
-                <span class="input__error input__error_visible"></span>
+                <span id="input-description-error" class="modal__error"></span>
               </label>
             </div>
             <!-- Save Button -->
-            <div class="input">
-              <button type="submit" id="save-button" class="input__button">
+            <div class="modal__input">
+              <button
+                type="submit"
+                id="save-button"
+                class="modal__input_type_button"
+              >
                 Save
               </button>
             </div>
@@ -126,40 +130,42 @@
             </button>
           </div>
           <!-- New Post Form -->
-          <form class="modal__content">
+          <form class="modal__form" novalidate>
             <!-- Image Link Input -->
-            <div class="input">
-              <label class="input__label" for="input-img"
+            <div class="modal__input">
+              <label class="modal__label" for="input-img"
                 >Image link
                 <input
                   type="url"
                   required
                   id="input-img"
-                  class="input__text input__text_type_error"
+                  class="modal__input_type_text"
                   placeholder="Paste a link to the picture"
                 />
-                <span class="input__error input__error_visible"></span>
+                <span id="input-img-error" class="modal__error"></span>
               </label>
             </div>
             <!-- Image Caption Input -->
-            <div class="input">
-              <label class="input__label" for="input-caption"
+            <div class="modal__input">
+              <label class="modal__label" for="input-caption"
                 >Caption
                 <input
                   type="text"
                   required
                   id="input-caption"
-                  class="input__text input__text_type_error"
+                  class="modal__input_type_text"
                   placeholder="Type your caption"
                   minlength="2"
                   maxlength="30"
                 />
-                <span class="input__error input__error_visible"></span>
+                <span id="input-caption-error" class="modal__error"></span>
               </label>
             </div>
             <!-- Save Button -->
-            <div class="input">
-              <button type="submit" class="input__button">Save</button>
+            <div class="modal__input">
+              <button type="submit" class="modal__input_type_button">
+                Save
+              </button>
             </div>
           </form>
         </div>

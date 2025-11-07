@@ -12,6 +12,7 @@
   opacity: 0;
   transition: visibility 0.4s ease, opacity 0.4s;
   padding: 0 10px;
+  z-index: 0;
 }
 
 .modal_is-open {
@@ -28,6 +29,7 @@
   border-radius: 8px;
   max-width: 730px;
   flex-grow: 1;
+  z-index: 1;
 }
 
 .modal__row {
@@ -105,10 +107,89 @@
   margin: 0;
 }
 
-.modal__content {
+.modal__form {
   display: flex;
   flex-direction: column;
   margin: 0 50px 32px;
+}
+
+.modal__input {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__input_type_text {
+  width: 100%;
+  border: 1px #21212166 solid;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+  transition: 0.3s;
+  padding: 16px 12px;
+  max-height: 52px;
+  box-sizing: border-box;
+  margin-top: 8px;
+}
+
+.modal__input_type_text::placeholder {
+  color: #2121214d;
+}
+
+.modal__input_type_text:hover {
+  border: 1px #212121 solid;
+}
+
+.modal__input_type_error {
+  border-color: #ff000099;
+}
+
+.modal__error {
+  visibility: hidden;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  color: #ff0000b2;
+}
+
+.modal__error-visible {
+  visibility: visible;
+  margin-top: 8px;
+}
+
+.modal__label {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #212121b2;
+  display: block;
+  margin-bottom: 32px;
+}
+
+.modal__input_type_button {
+  background-color: #212121;
+  color: #fcf5e5;
+  max-width: 156px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 18px 32px;
+  font-size: 16px;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+.modal__input_type_button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.modal__input_type_button-disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
 @media screen and (max-width: 630px) {
@@ -116,7 +197,7 @@
     margin: 12px 12px 24px;
   }
 
-  .modal__content {
+  .modal__form {
     margin: 0 12px 12px;
   }
 
@@ -135,5 +216,18 @@
 
   .modal__title_type_preview-image {
     font-size: 16px;
+  }
+
+  .modal__label {
+    margin-bottom: 24px;
+  }
+
+  .modal__input_type_text {
+    max-height: 48px;
+    font-size: 16px;
+  }
+
+  .modal__input_type_button {
+    min-width: 100%;
   }
 }
