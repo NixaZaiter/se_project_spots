@@ -1,4 +1,4 @@
-# Project "Spots": (Stage 8)
+# Project "Spots": (Stage 9)
 
 ## Overview
 
@@ -9,11 +9,11 @@
 
 ### **Description & Fundamentals**
 
-My submission for the eighth stage of the "Spots" project for Sprint 5. Dynamic cards can be generated now with the "New Post" button. The like button now toggles on and off when clicked. A card delete button has been added with included functionality. Finally, the cards can be opened in a modal of their own to view their full size.
+My submission for the ninth stage of the "Spots" project for Sprint 6. Validation checking and error messages have been added to the inputs of the modals (preview modal excluded). The buttons have been disabled when invalid inputs are detected. Submission of new card posts now reset the input fields but remain if closing without submitting.
 
 ### **Technology & Techniques**
 
-The HTML/CSS have been refactored a bit to further diversify the card icon classes into seperate like and delete classes. The "getCardElement" function to add, delete, and import data to new cards has been implemented into the JS code. Buttons and modals for the cards to be previewed have also been coded into the JS/HTML and styled in the CSS.
+Buttons have been grayed out when inactive with the css. The borders of modal inputs turn red and have red error messages pop up below them when invalid inputs are put in. The "input" css file has been removed and all classes that had started with "input" now fall under "modal" classes now due to some personal confusion when going back though them all.
 
 ### **GitHub Pages**
 
@@ -21,8 +21,8 @@ https://nixazaiter.github.io/se_project_spots/
 
 ### **Notes**
 
-Struggles: Honestly had more issues with the CSS styling than the JS. Whether it was removing the border of the inactive like button from the active state or just getting the like button to not be cut off by the button borders.
+Struggles: The inclusion of the "config" object made figuring out how to set up the code a little bit more difficult and slowed me down considerably. Still not entirely sure it's implimented exactly as wanted. Getting the escape key to close the modals probably took the second longest to figure out, but not nearly as long the config object implimentation.
 
 Possible features:
 
-- Would like to add in options to close modals by clicking outside of them (possibly mobile only).
+- Cycling thorugh pictures in preview with arrows on screen and keyboard
