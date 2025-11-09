@@ -26,3 +26,7 @@ Struggles: The inclusion of the "config" object made figuring out how to set up 
 Possible features:
 
 - Cycling thorugh pictures in preview with arrows on screen and keyboard
+
+## Project Pitch Video
+
+My project pitch video for Spots stage 9. (Recorded on OBS instead of Loom because of techincal issues with Loom.)  https://drive.google.com/file/d/1ssKF8TNyUS07wG4TCgKMXddu8om55Ywb/view?usp=drive_link
