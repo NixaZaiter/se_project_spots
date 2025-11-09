@@ -55,7 +55,7 @@ const newPostModal = document.querySelector("#new-post-modal");
 const newPostForm = newPostModal.querySelector(".modal__form");
 const inputImg = newPostModal.querySelector("#input-img");
 const inputCaption = newPostModal.querySelector("#input-caption");
-const postSubmitBtn = newPostModal.querySelector(".modal__input_type_button");
+const postSubmitBtn = newPostModal.querySelector("#post-save-button");
 const newPostClose = newPostModal.querySelector(".modal__close");
 
 // Card Template
@@ -68,8 +68,11 @@ const cardsList = document.querySelector(".cards__list");
 
 editProfileBtn.addEventListener("click", function (evt) {
   openModal(editProfileModal);
+
   inputName.value = editProfileName.textContent;
   inputDescription.value = editProfileDescription.textContent;
+  checkInputValidity(editProfileModal, inputName, settings);
+  checkInputValidity(editProfileModal, inputDescription, settings);
 });
 
 editProfileClose.addEventListener("click", function (evt) {
@@ -126,12 +129,12 @@ function getCardElement(data) {
 
 function openModal(modal) {
   modal.classList.add("modal_is-open");
-  document.addEventListener("keydown", escapePressed);
+  document.addEventListener("keydown", closeOnEscape);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-open");
-  document.removeEventListener("keydown", escapePressed);
+  document.removeEventListener("keydown", closeOnEscape);
 }
 
 function handleProfileFormSubmit(event) {
@@ -161,7 +164,7 @@ function handleAddCardSubmit(event) {
 
   newPostForm.reset();
 
-  disableButton(postSubmitBtn);
+  disableButton(postSubmitBtn, settings);
 
   closeModal(newPostModal);
 }
@@ -181,9 +184,14 @@ allModals.forEach((modal) => {
   });
 });
 
-const escapePressed = (evt) => {
+const closeOnEscape = (evt) => {
+  if (evt.key !== `Escape`) {
+    return;
+  }
+
   const currentModal = document.querySelector(".modal_is-open");
-  if (evt.key === `Escape`) {
+
+  if (currentModal) {
     closeModal(currentModal);
   }
 };

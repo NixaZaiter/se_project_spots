@@ -76,14 +76,14 @@
           <!-- Edit Profile Form -->
           <form class="modal__form" novalidate>
             <!-- Name Input -->
-            <div class="modal__input">
+            <div class="modal__field">
               <label class="modal__label" for="input-name"
                 >Name
                 <input
                   type="text"
                   required
                   id="input-name"
-                  class="modal__input_type_text"
+                  class="modal__input modal__input_type_text"
                   placeholder="Type your name"
                   minlength="2"
                   maxlength="40"
@@ -92,14 +92,14 @@
               </label>
             </div>
             <!-- Description Input -->
-            <div class="modal__input">
+            <div class="modal__field">
               <label class="modal__label" for="input-description"
                 >Description
                 <input
                   type="text"
                   required
                   id="input-description"
-                  class="modal__input_type_text"
+                  class="modal__input modal__input_type_text"
                   placeholder="Describe yourself"
                   minlength="2"
                   maxlength="200"
@@ -108,11 +108,11 @@
               </label>
             </div>
             <!-- Save Button -->
-            <div class="modal__input">
+            <div class="modal__field">
               <button
                 type="submit"
-                id="save-button"
-                class="modal__input_type_button"
+                id="profile-save-button"
+                class="modal__input modal__input_type_button"
               >
                 Save
               </button>
@@ -132,28 +132,28 @@
           <!-- New Post Form -->
           <form class="modal__form" novalidate>
             <!-- Image Link Input -->
-            <div class="modal__input">
+            <div class="modal__field">
               <label class="modal__label" for="input-img"
                 >Image link
                 <input
                   type="url"
                   required
                   id="input-img"
-                  class="modal__input_type_text"
+                  class="modal__input modal__input_type_text"
                   placeholder="Paste a link to the picture"
                 />
                 <span id="input-img-error" class="modal__error"></span>
               </label>
             </div>
             <!-- Image Caption Input -->
-            <div class="modal__input">
+            <div class="modal__field">
               <label class="modal__label" for="input-caption"
                 >Caption
                 <input
                   type="text"
                   required
                   id="input-caption"
-                  class="modal__input_type_text"
+                  class="modal__input modal__input_type_text"
                   placeholder="Type your caption"
                   minlength="2"
                   maxlength="30"
@@ -162,8 +162,12 @@
               </label>
             </div>
             <!-- Save Button -->
-            <div class="modal__input">
-              <button type="submit" class="modal__input_type_button">
+            <div class="modal__field">
+              <button
+                type="submit"
+                id="post-save-button"
+                class="modal__input modal__input_type_button"
+              >
                 Save
               </button>
             </div>

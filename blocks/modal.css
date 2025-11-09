@@ -113,19 +113,22 @@
   margin: 0 50px 32px;
 }
 
-.modal__input {
+.modal__field {
   display: flex;
   flex-direction: column;
+}
+
+.modal__input {
+  line-height: 1;
+  transition: 0.3s;
+  border-radius: 8px;
 }
 
 .modal__input_type_text {
   width: 100%;
   border: 1px #21212166 solid;
-  border-radius: 8px;
   font-weight: 500;
   font-size: 20px;
-  line-height: 1;
-  transition: 0.3s;
   padding: 16px 12px;
   max-height: 52px;
   box-sizing: border-box;
@@ -173,13 +176,10 @@
   color: #fcf5e5;
   max-width: 156px;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
   padding: 18px 32px;
   font-size: 16px;
   box-sizing: border-box;
-  line-height: 1;
 }
 
 .modal__input_type_button:hover {
