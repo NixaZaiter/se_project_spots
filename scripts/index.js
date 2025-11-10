@@ -67,12 +67,10 @@ const cardsList = document.querySelector(".cards__list");
 // Modal Open/Close Listeners + Current Profile Inputs
 
 editProfileBtn.addEventListener("click", function (evt) {
-  openModal(editProfileModal);
-
   inputName.value = editProfileName.textContent;
   inputDescription.value = editProfileDescription.textContent;
-  checkInputValidity(editProfileModal, inputName, settings);
-  checkInputValidity(editProfileModal, inputDescription, settings);
+  resetValidation(editProfileForm, [inputName, inputDescription], settings);
+  openModal(editProfileModal);
 });
 
 editProfileClose.addEventListener("click", function (evt) {

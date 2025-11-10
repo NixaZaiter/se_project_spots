@@ -1,8 +1,8 @@
 .page {
+  display: flex;
+  flex-direction: column;
   background-color: #fcf5e5;
   min-height: 100vh;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
-  display: grid;
-  grid-template-rows: 46px 1fr auto;
-  grid-template-columns: 16px 1fr 16px;
+  margin: 0;
 }

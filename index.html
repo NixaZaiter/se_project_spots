@@ -44,18 +44,22 @@
             <!-- Dynamic Card Template -->
             <template id="new-cards">
               <li class="card">
-                <img class="card__image" src="#" alt="" />
-                <h2 class="card__text"></h2>
-                <button
-                  aria-label="Like card"
-                  class="card__like-btn"
-                  type="button"
-                ></button>
-                <button
-                  aria-label="Delete card"
-                  class="card__delete-btn"
-                  type="button"
-                ></button>
+                <div class="card__image-container">
+                  <img class="card__image" src="#" alt="" />
+                  <button
+                    aria-label="Delete card"
+                    class="card__delete-btn"
+                    type="button"
+                  ></button>
+                </div>
+                <div class="card__content">
+                  <h2 class="card__text"></h2>
+                  <button
+                    aria-label="Like card"
+                    class="card__like-btn"
+                    type="button"
+                  ></button>
+                </div>
               </li>
             </template>
           </ul>

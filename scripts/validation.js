@@ -55,6 +55,14 @@ const enableValidation = (config) => {
   });
 };
 
+const resetValidation = (formEl, inputList, config) => {
+  const buttonElement = formEl.querySelector(config.submitButtonSelector);
+  inputList.forEach((input) => {
+    hideInputError(formEl, input, config);
+  });
+  toggleButtonState(inputList, buttonElement, config);
+};
+
 const setEventListeners = (formEl, config) => {
   const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
   const buttonElement = formEl.querySelector(config.submitButtonSelector);

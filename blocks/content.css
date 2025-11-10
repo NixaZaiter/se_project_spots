@@ -1,15 +1,8 @@
 .content {
-  display: grid;
-  grid-column: 2;
-  grid-template-rows:
-    max-content
-    min-content;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   justify-self: center;
-}
-
-@media screen and (max-width: 630px) {
-  .content {
-    grid-template-rows: min-content;
-  }
+  margin: 0 auto;
+  flex-grow: 1;
+  padding: 0 16px;
 }

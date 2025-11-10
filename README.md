@@ -29,4 +29,10 @@ Possible features:
 
 ## Project Pitch Video
 
-My project pitch video for Spots stage 9. (Recorded on OBS instead of Loom because of techincal issues with Loom.)  https://drive.google.com/file/d/1ssKF8TNyUS07wG4TCgKMXddu8om55Ywb/view?usp=drive_link
+My project pitch video for Spots stage 9. (Recorded on OBS instead of Loom because of techincal issues with Loom.) https://drive.google.com/file/d/1ssKF8TNyUS07wG4TCgKMXddu8om55Ywb/view?usp=drive_link
+(Video made before AI review and Code review fixes)
+
+## Post Review Notes
+
+- Most grid elements are now gone and replaced with flexbox properties, margin properties or padding in one case.
+- Validation reset has been added on closing edit profile modal. (Button is always enabled while valid. Never when invalid.)
