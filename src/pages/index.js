@@ -1,3 +1,10 @@
+import "./index.css";
+import {
+  enableValidation,
+  resetValidation,
+  disableButton,
+  validationConfig,
+} from "../scripts/validation.js";
 const initialCards = [
   {
     name: "Val Thorens",
@@ -69,7 +76,11 @@ const cardsList = document.querySelector(".cards__list");
 editProfileBtn.addEventListener("click", function (evt) {
   inputName.value = editProfileName.textContent;
   inputDescription.value = editProfileDescription.textContent;
-  resetValidation(editProfileForm, [inputName, inputDescription], settings);
+  resetValidation(
+    editProfileForm,
+    [inputName, inputDescription],
+    validationConfig
+  );
   openModal(editProfileModal);
 });
 
@@ -162,7 +173,7 @@ function handleAddCardSubmit(event) {
 
   newPostForm.reset();
 
-  disableButton(postSubmitBtn, settings);
+  disableButton(postSubmitBtn, validationConfig);
 
   closeModal(newPostModal);
 }
@@ -193,3 +204,5 @@ const closeOnEscape = (evt) => {
     closeModal(currentModal);
   }
 };
+
+enableValidation(validationConfig);
