@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>Spots</title>
@@ -40,17 +40,26 @@
       </header>
       <main class="content">
         <section class="profile">
-          <img
-            class="profile__avatar"
-            src="<%=require('./images/avatar.jpg')%>"
-            alt="Avatar image"
-          />
+          <div class="profile__avatar-container">
+            <button class="profile__avatar-btn">
+              <img
+                class="profile__pencil-icon"
+                src="<%=require('./images/pencil-light.svg')%>"
+                alt="Pencil icon"
+              />
+            </button>
+            <img
+              class="profile__avatar"
+              src="<%=require('./images/avatar.jpg')%>"
+              alt="Avatar image"
+            />
+          </div>
 
           <h1 class="profile__name">Bessie Coleman</h1>
           <p class="profile__description">Civil Aviator</p>
 
           <button class="profile__button profile__button_type_edit">
-            <img src="<%=require('./images/edit-icon.svg')%>" alt="Edit icon" />
+            <img src="<%=require('./images/pencil.svg')%>" alt="Edit icon" />
             Edit Profile
           </button>
           <button class="profile__button profile__button_type_post">

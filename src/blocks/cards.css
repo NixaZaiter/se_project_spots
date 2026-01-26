@@ -1,5 +1,6 @@
 .cards {
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
   padding-bottom: 40px;
   border-bottom: 1px solid;
   padding-top: 20px;
@@ -11,7 +12,7 @@
   padding: 0;
   margin: 0;
   grid-template-columns: repeat(3, 413px);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
   row-gap: 40px;
   column-gap: 20px;
 }
