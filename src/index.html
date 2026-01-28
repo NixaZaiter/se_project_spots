@@ -41,7 +41,7 @@
       <main class="content">
         <section class="profile">
           <div class="profile__avatar-container">
-            <button class="profile__avatar-btn">
+            <button class="profile__btn profile__btn_type_avatar">
               <img
                 class="profile__pencil-icon"
                 src="<%=require('./images/pencil-light.svg')%>"
@@ -58,11 +58,11 @@
           <h1 class="profile__name">Bessie Coleman</h1>
           <p class="profile__description">Civil Aviator</p>
 
-          <button class="profile__button profile__button_type_edit">
+          <button class="profile__btn profile__btn_type_profile">
             <img src="<%=require('./images/pencil.svg')%>" alt="Edit icon" />
             Edit Profile
           </button>
-          <button class="profile__button profile__button_type_post">
+          <button class="profile__btn profile__btn_type_card">
             <img src="<%=require('./images/plus-icon.svg')%>" alt="Plus icon" />
             New Post
           </button>
@@ -96,8 +96,8 @@
       <footer class="footer">
         <p class="footer__copyright">2025 © Spots</p>
       </footer>
-      <!-- Edit profile modal -->
-      <div class="modal" id="edit-profile-modal">
+      <!-- Edit Profile modal -->
+      <div class="modal" id="profile-modal">
         <div class="modal__container">
           <div class="modal__row">
             <h3 class="modal__header">Edit profile</h3>
@@ -108,7 +108,7 @@
               />
             </button>
           </div>
-          <!-- Edit Profile Form -->
+          <!-- Edit Profile form -->
           <form class="modal__form" novalidate>
             <!-- Name Input -->
             <div class="modal__field">
@@ -142,12 +142,12 @@
                 <span id="input-description-error" class="modal__error"></span>
               </label>
             </div>
-            <!-- Save Button -->
+            <!-- Save btn -->
             <div class="modal__field">
               <button
                 type="submit"
-                id="profile-save-button"
-                class="modal__input modal__input_type_button"
+                id="profile-save-btn"
+                class="modal__input modal__input_type_btn"
               >
                 Save
               </button>
@@ -155,8 +155,8 @@
           </form>
         </div>
       </div>
-      <!-- New post modal -->
-      <div class="modal" id="new-post-modal">
+      <!-- New Card modal -->
+      <div class="modal" id="card-modal">
         <div class="modal__container">
           <div class="modal__row">
             <h3 class="modal__header">New post</h3>
@@ -167,44 +167,44 @@
               />
             </button>
           </div>
-          <!-- New Post Form -->
+          <!-- New Card Form -->
           <form class="modal__form" novalidate>
             <!-- Image Link Input -->
             <div class="modal__field">
-              <label class="modal__label" for="input-img"
+              <label class="modal__label" for="input-card-img"
                 >Image link
                 <input
                   type="url"
                   required
-                  id="input-img"
+                  id="input-card-img"
                   class="modal__input modal__input_type_text"
                   placeholder="Paste a link to the picture"
                 />
-                <span id="input-img-error" class="modal__error"></span>
+                <span id="input-card-img-error" class="modal__error"></span>
               </label>
             </div>
             <!-- Image Caption Input -->
             <div class="modal__field">
-              <label class="modal__label" for="input-caption"
+              <label class="modal__label" for="input-card-caption"
                 >Caption
                 <input
                   type="text"
                   required
-                  id="input-caption"
+                  id="input-card-caption"
                   class="modal__input modal__input_type_text"
                   placeholder="Type your caption"
                   minlength="2"
                   maxlength="30"
                 />
-                <span id="input-caption-error" class="modal__error"></span>
+                <span id="input-card-caption-error" class="modal__error"></span>
               </label>
             </div>
-            <!-- Save Button -->
+            <!-- Save btn -->
             <div class="modal__field">
               <button
                 type="submit"
-                id="post-save-button"
-                class="modal__input modal__input_type_button"
+                id="card-save-btn"
+                class="modal__input modal__input_type_btn"
               >
                 Save
               </button>
@@ -212,7 +212,6 @@
           </form>
         </div>
       </div>
-
       <!-- Image Preview Modal -->
       <div class="modal" id="image-preview-modal">
         <div class="modal__image-container">
@@ -228,6 +227,47 @@
           <img class="modal__image" src="#" alt="" />
 
           <p class="modal__title modal__title_type_preview-image"></p>
+        </div>
+      </div>
+      <!-- Edit Avatar modal-->
+      <div class="modal" id="avatar-modal">
+        <div class="modal__container">
+          <div class="modal__row">
+            <h3 class="modal__header">Edit profile avatar</h3>
+            <button class="modal__close" type="button">
+              <img
+                src="<%=require('./images/close-icon.svg')%>"
+                alt="close icon"
+              />
+            </button>
+          </div>
+          <!-- Edit Avatar form -->
+          <form class="modal__form" novalidate>
+            <!-- Avatar Link Input -->
+            <div class="modal__field">
+              <label class="modal__label" for="input-avatar-img"
+                >Profile Picture
+                <input
+                  type="url"
+                  required
+                  id="input-avatar-img"
+                  class="modal__input modal__input_type_text"
+                  placeholder="Paste the link to an image"
+                />
+                <span id="input-avatar-img-error" class="modal__error"></span>
+              </label>
+            </div>
+            <!-- Save btn -->
+            <div class="modal__field">
+              <button
+                type="submit"
+                id="avatar-save-btn"
+                class="modal__input modal__input_type_btn"
+              >
+                Save
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
