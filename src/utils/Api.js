@@ -70,23 +70,10 @@ class Api {
     }).then(this._handleServerResponse);
   }
 
-  likeCard({ id, isLiked }) {
+  toggleLikeStatus(id, isLiked) {
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
-      method: "PUT",
+      method: isLiked ? "DELETE" : "PUT",
       headers: this._headers,
-      body: JSON.stringify({
-        isLiked,
-      }),
-    }).then(this._handleServerResponse);
-  }
-
-  dislikeCard({ id, isLiked }) {
-    return fetch(`${this._baseUrl}/cards/${id}/likes`, {
-      method: "DELETE",
-      headers: this._headers,
-      body: JSON.stringify({
-        isLiked,
-      }),
     }).then(this._handleServerResponse);
   }
 }

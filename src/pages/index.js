@@ -5,6 +5,7 @@ import {
   disableBtn,
   validationConfig,
 } from "../scripts/validation.js";
+import { setBtnText } from "../utils/helpers.js";
 import Api from "../utils/Api.js";
 const currentCards = [
   {
@@ -96,11 +97,13 @@ const profileModal = document.querySelector("#profile-modal");
 const profileForm = profileModal.querySelector(".modal__form");
 const profileName = profileModal.querySelector("#input-name");
 const profileDescription = profileModal.querySelector("#input-description");
+const profileSubmitBtn = profileModal.querySelector("#profile-save-btn");
 const profileClose = profileModal.querySelector(".modal__close");
 
 // Delete modal elements
 const deleteModal = document.querySelector("#delete-modal");
 const deleteForm = deleteModal.querySelector(".modal__form");
+const deleteConfirmBtn = deleteModal.querySelector("#delete-btn");
 const deleteCancelBtn = deleteModal.querySelector("#cancel-btn");
 const deleteCloseBtn = deleteModal.querySelector(".modal__close");
 
@@ -151,7 +154,8 @@ previewImgCloseBtn.addEventListener("click", function () {
 deleteCloseBtn.addEventListener("click", function () {
   closeModal(deleteModal);
 });
-deleteCancelBtn.addEventListener("click", function () {
+deleteCancelBtn.addEventListener("click", function (evt) {
+  evt.preventDefault();
   selectedCard = null;
   selectedCardId = null;
   closeModal(deleteModal);
@@ -168,8 +172,12 @@ function handleDeleteCard(cardElement, data) {
   selectedCardId = data._id;
   openModal(deleteModal);
 }
-function handleLike(evt) {
-  evt.target.classList.toggle("card__like-btn_active");
+function handleLikeCard(evt, id) {
+  const isLiked = evt.target.classList.contains("card__like-btn_active");
+  api
+    .toggleLikeStatus(id, isLiked)
+    .then(evt.target.classList.toggle("card__like-btn_active"))
+    .catch(console.error);
 }
 function handleImageClick(data) {
   previewImgImage.src = data.link;
@@ -185,12 +193,16 @@ function getCardElement(data) {
   const likeBtn = cardElement.querySelector(".card__like-btn");
   const deleteBtn = cardElement.querySelector(".card__delete-btn");
 
+  data.isLiked
+    ? likeBtn.classList.add("card__like-btn_active")
+    : likeBtn.classList.remove("card__like-btn_active");
+
   cardTitleElement.textContent = data.name;
   cardImageElement.alt = data.name;
   cardImageElement.src = data.link;
 
-  likeBtn.addEventListener("click", handleLike);
-  deleteBtn.addEventListener("click", (evt) =>
+  likeBtn.addEventListener("click", (evt) => handleLikeCard(evt, data._id));
+  deleteBtn.addEventListener("click", () =>
     handleDeleteCard(cardElement, data),
   );
 
@@ -211,6 +223,8 @@ function closeModal(modal) {
 function handleAvatarFormSubmit(evt) {
   evt.preventDefault();
 
+  setBtnText(evt, "Saving...");
+
   api
     .editUserAvatar({ avatar: avatarImg.value })
     .then((data) => {
@@ -219,10 +233,15 @@ function handleAvatarFormSubmit(evt) {
       disableBtn(avatarSubmitBtn, validationConfig);
       closeModal(avatarModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      setBtnText(evt, "Save");
+    });
 }
 function handleCardFormSubmit(evt) {
   evt.preventDefault();
+
+  setBtnText(evt, "Saving...");
 
   api
     .createCard({ name: cardCaption.value, link: cardImg.value })
@@ -236,11 +255,14 @@ function handleCardFormSubmit(evt) {
       disableBtn(cardSubmitBtn, validationConfig);
       closeModal(cardModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      setBtnText(evt, "Save");
+    });
 }
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
-
+  setBtnText(evt, "Saving...");
   api
     .editUserInfo({ name: profileName.value, about: profileDescription.value })
     .then((data) => {
@@ -248,10 +270,15 @@ function handleProfileFormSubmit(evt) {
       currentDescription.textContent = data.about;
       closeModal(profileModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      setBtnText(evt, "Save");
+    });
 }
 function handleDeleteSubmit(evt) {
   evt.preventDefault();
+
+  setBtnText(evt, "Deleting...");
 
   api
     .deleteCard(selectedCardId)
@@ -259,7 +286,10 @@ function handleDeleteSubmit(evt) {
       selectedCard.remove();
       closeModal(deleteModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      setBtnText(evt, "Delete");
+    });
 }
 
 // Close on clicking outside modal

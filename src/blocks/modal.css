@@ -218,17 +218,32 @@
 
 .modal__input_type_delete-btn {
   background-color: #ff6565;
+  color: #000;
   min-width: 156px;
   margin-bottom: 32px;
 }
 
 .modal__input_type_cancel-btn {
   min-width: 156px;
+  background-color: #fff;
+  border: solid #000 1px;
+  color: #000;
 }
 
 .modal__input_type_btn:hover {
   opacity: 0.8;
   cursor: pointer;
+}
+
+.modal__input_type_delete-btn:hover {
+  background-color: #ff3333;
+  opacity: 1;
+}
+
+.modal__input_type_cancel-btn:hover {
+  border: none;
+  background-color: #000;
+  color: #fff;
 }
 
 .modal__input_type_btn-disabled {
