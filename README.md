@@ -27,8 +27,11 @@ Possible features:
 
 ## Project Pitch Video
 
-My project pitch video for Spots final stage. (Recorded on OBS instead of Loom because of techincal issues with Loom.) https://drive.google.com/file/d/1ssKF8TNyUS07wG4TCgKMXddu8om55Ywb/view?usp=drive_link
-(Video made before AI review and Code review fixes)
+Spots stage 9: https://drive.google.com/file/d/1ssKF8TNyUS07wG4TCgKMXddu8om55Ywb/view?usp=drive_link
+
+Spots Final: https://drive.google.com/file/d/1uXJ8MqhUNV6u5E7s08JA6urxfSEeRNdI/view?usp=drive_link
+
+(Videos made before AI review and Code review fixes)
 
 ## Post Review Notes
 
