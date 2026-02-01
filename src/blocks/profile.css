@@ -5,6 +5,7 @@
   margin: 34px 0 0;
   padding-bottom: 20px;
   border-bottom: 1px solid;
+  border-color: #21212166;
   grid-template-columns:
     minmax(80px, 190px)
     minmax(0, 420px)
@@ -84,6 +85,7 @@
   transition:
     opacity 0.3s,
     visibility 0.3s;
+  gap: 8px;
 }
 
 .profile__avatar-container:hover .profile__btn_type_avatar {
@@ -158,6 +160,7 @@
     padding: 4px;
     opacity: 1;
     visibility: visible;
+    gap: 0;
   }
 
   .profile__btn_type_avatar::after {
