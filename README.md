@@ -1,4 +1,4 @@
-# Project "Spots": (Stage 9)
+# Project "Spots": (Final)
 
 ## Overview
 
@@ -9,11 +9,11 @@
 
 ### **Description & Fundamentals**
 
-My submission for the ninth stage of the "Spots" project for Sprint 6. Validation checking and error messages have been added to the inputs of the modals (preview modal excluded). The buttons have been disabled when invalid inputs are detected. Submission of new card posts now reset the input fields but remain if closing without submitting.
+My submission for the final stage of the "Spots" project for Sprint 9. Cards, profile info and the avatar are now all sent to and from the server. Confirmation popups are now present when going to delete a card. All previous validation still works. New elements have been styled to align with the Figma design.
 
 ### **Technology & Techniques**
 
-Buttons have been grayed out when inactive with the css. The borders of modal inputs turn red and have red error messages pop up below them when invalid inputs are put in. The "input" css file has been removed and all classes that had started with "input" now fall under "modal" classes now due to some personal confusion when going back though them all.
+Several classes, ids and variables throughout the project have been renamed to keep more consistent naming conventions.
 
 ### **GitHub Pages**
 
@@ -21,16 +21,17 @@ https://nixazaiter.github.io/se_project_spots/
 
 ### **Notes**
 
-Struggles: The inclusion of the "config" object made figuring out how to set up the code a little bit more difficult and slowed me down considerably. Still not entirely sure it's implimented exactly as wanted. Getting the escape key to close the modals probably took the second longest to figure out, but not nearly as long the config object implimentation.
-
 Possible features:
 
 - Cycling thorugh pictures in preview with arrows on screen and keyboard
 
 ## Project Pitch Video
 
-My project pitch video for Spots stage 9. (Recorded on OBS instead of Loom because of techincal issues with Loom.) https://drive.google.com/file/d/1ssKF8TNyUS07wG4TCgKMXddu8om55Ywb/view?usp=drive_link
-(Video made before AI review and Code review fixes)
+Spots stage 9: https://drive.google.com/file/d/1ssKF8TNyUS07wG4TCgKMXddu8om55Ywb/view?usp=drive_link
+
+Spots Final: https://drive.google.com/file/d/1uXJ8MqhUNV6u5E7s08JA6urxfSEeRNdI/view?usp=drive_link
+
+(Videos made before AI review and Code review fixes)
 
 ## Post Review Notes
 
